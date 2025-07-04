@@ -1,0 +1,15 @@
+export const getMessages = (req, res, next) => {
+  try {
+    const messages = [
+      { sender: 'Alice', text: 'Hello!', timestamp: Date.now() },
+      { sender: 'Bob', text: 'Hi there!', timestamp: Date.now() }
+    ];
+
+    // Intentional bug: undefined var
+    console.log(debuggingValue); // undefined var for Node.js inspector
+
+    res.json(messages);
+  } catch (err) {
+    next(err);
+  }
+};
